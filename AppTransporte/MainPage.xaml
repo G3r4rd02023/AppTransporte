@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTransporte.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Obtener Autobuses" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
+            <ActivityIndicator x:Name="loading" HeightRequest="30" Color="Blue" IsRunning="True" 
+                               IsVisible="false"/>
+
+            <!--<ListView x:Name="listViewAutobuses">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <Label Text="{Binding Marca}" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+                                <Label Text="{Binding Modelo}" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+                                <Label Text="{Binding Capacidad}" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+
+            <!-- Encabezados -->
+            <StackLayout Orientation="Horizontal" Padding="10">
+                <Label Text="Marca" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+                <Label Text="Modelo" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+                <Label Text="Capacidad" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+            </StackLayout>
+
+            <!-- Datos -->
+            <ListView x:Name="listViewAutobuses">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <!-- Puedes dejar este espacio en blanco o personalizar el encabezado si lo deseas -->
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <Label Text="{Binding Marca}" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+                                <Label Text="{Binding Modelo}" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+                                <Label Text="{Binding Capacidad}" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
